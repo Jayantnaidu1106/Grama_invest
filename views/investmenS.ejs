@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Categories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .category {
+            margin-bottom: 30px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .govt {
+            background-color: #d1e7dd;
+            color: #0f5132;
+        }
+
+        .nifty {
+            background-color: #cff4fc;
+            color: #055160;
+        }
+
+        .banknifty {
+            background-color: #fff3cd;
+            color: #664d03;
+        }
+
+        .sensex {
+            background-color: #e2e3e5;
+            color: #41464b;
+        }
+
+        .penny {
+            background-color: #fde2e4;
+            color: #842029;
+        }
+
+        ul {
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        li {
+            padding-left: 1000px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            color: rgb(13, 13, 13);
+        }
+
+        /*.govt li:nth-child(odd) { background-color: #c6d037; }
+        .govt li:nth-child(even) { background-color: #ce2b9a; }
+
+        .nifty li:nth-child(odd) { background-color: #055160; }
+        .nifty li:nth-child(even) { background-color: #033940; }
+
+        .banknifty li:nth-child(odd) { background-color: #664d03; }
+        .banknifty li:nth-child(even) { background-color: #503a02; }
+
+        .sensex li:nth-child(odd) { background-color: #41464b; }
+        .sensex li:nth-child(even) { background-color: #313538; }
+
+        .penny li:nth-child(odd) { background-color: #842029; }
+        .penny li:nth-child(even) { background-color: #6a1b23; }
+*/
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .category {
+                padding: 10px;
+            }
+
+            li {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Stock Categories</h1>
+
+    <div class="category govt">
+        <h2>Government Based Shares</h2>
+        <ul style="list-style-type:square;">
+            <li>ONGC</li>
+            <li>NTPC</li>
+            <li>BPCL</li>
+            <li>Bharat Electronics</li>
+            <li>Coal India</li>
+            <li>Power Grid</li>
+            <li>PFC</li>
+            <li>Hindustan Aeronautics</li>
+            <li>IRCTC</li>
+            <li>IRFC</li>
+        </ul>
+    </div>
+
+    <div class="category nifty">
+        <h2>NIFTY 50</h2>
+        <ul style="list-style-type:circle;">
+            <li>Adani Ports & SEZ</li>
+            <li>Asian Paints</li>
+            <li>Axis Bank</li>
+            <li>Bajaj Auto</li>
+            <li>Bajaj Finance</li>
+            <li>Bharti Airtel</li>
+            <li>Britannia Industries</li>
+            <li>Cipla</li>
+            <li>Coal India</li>
+            <li>Divi's Laboratories</li>
+            <li>HCL Technologies</li>
+            <li>HDFC Bank</li>
+            <li>HDFC Life</li>
+            <li>Hero MotoCorp</li>
+            <li>Hindalco Industries</li>
+            <li>Hindustan Unilever</li>
+            <li>ICICI Bank</li>
+            <li>Indian Oil Corporation</li>
+            <li>Infosys</li>
+            <li>ITC</li>
+            <li>JSW Steel</li>
+            <li>Kotak Mahindra Bank</li>
+            <li>Larsen & Toubro</li>
+            <li>Mahindra & Mahindra</li>
+            <li>Maruti Suzuki India</li>
+            <li>Nestle India</li>
+            <li>NTPC</li>
+            <li>Oil & Natural Gas Corporation (ONGC)</li>
+            <li>Power Grid Corporation</li>
+            <li>Reliance Industries</li>
+            <li>SBI Life Insurance</li>
+            <li>State Bank of India (SBI)</li>
+            <li>Sun Pharmaceutical Industries</li>
+            <li>Tata Consultancy Services (TCS)</li>
+            <li>Tata Motors</li>
+            <li>Tech Mahindra</li>
+            <li>Titan Company</li>
+            <li>UltraTech Cement</li>
+            <li>UPL</li>
+            <li>Wipro</li>
+        </ul>
+    </div>
+
+    <div class="category banknifty">
+        <h2>Bank Nifty</h2>
+        <ul style="list-style-type:disc;">
+            <li>Axis Bank</li>
+            <li>Bandhan Bank</li>
+            <li>Bank of Baroda</li>
+            <li>Bajaj Finserv</li>
+            <li>Federal Bank</li>
+            <li>HDFC Bank</li>
+            <li>ICICI Bank</li>
+            <li>IDFC First Bank</li>
+            <li>Kotak Mahindra Bank</li>
+            <li>State Bank of India (SBI)</li>
+        </ul>
+    </div>
+
+    <div class="category sensex">
+        <h2>SENSEX</h2>
+        <ul style="list-style-type:circle;">
+            <li>Adani Ports & SEZ</li>
+            <li>Asian Paints</li>
+            <li>Bajaj Finance</li>
+            <li>Bajaj Finserv</li>
+            <li>Bharti Airtel</li>
+            <li>Cipla</li>
+            <li>Coal India</li>
+            <li>Dr. Reddy's Laboratories</li>
+            <li>HCL Technologies</li>
+            <li>HDFC Bank</li>
+            <li>HDFC Life</li>
+            <li>Hindustan Unilever</li>
+            <li>ICICI Bank</li>
+            <li>Infosys</li>
+            <li>ITC</li>
+            <li>Kotak Mahindra Bank</li>
+            <li>Larsen & Toubro</li>
+            <li>Mahindra & Mahindra</li>
+            <li>Maruti Suzuki India</li>
+            <li>NTPC</li>
+            <li>Power Grid Corporation</li>
+            <li>Reliance Industries</li>
+            <li>SBI Life Insurance</li>
+            <li>Sun Pharmaceutical Industries</li>
+            <li>Tata Consultancy Services (TCS)</li>
+            <li>Tata Motors</li>
+            <li>Tech Mahindra</li>
+            <li>Titan Company</li>
+            <li>UltraTech Cement</li>
+            <li>Wipro</li>
+        </ul>
+    </div>
+
+    <div class="category penny">
+        <h2>Penny Stocks (Under ₹10)</h2>
+        <ul style="list-style-type:square;">
+            <li>Unitech Ltd.</li>
+            <li>Jai Corp Ltd.</li>
+            <li>Hindustan Composites Ltd.</li>
+            <li>Saurashtra Cement Ltd.</li>
+            <li>Gujarat Narmada Valley Fertilizers & Chemicals Ltd.</li>
+            <li>Kesar Petroproducts Ltd.</li>
+            <li>Shree Krishna Prasadam Ltd.</li>
+            <li>Ruchi Soya Industries Ltd.</li>
+            <li>Modern India Ltd.</li>
+            <li>Lancer Containers Lines Ltd.</li>
+            <li>Kothari Products Ltd.</li>
+            <li>Goa Carbon Ltd.</li>
+            <li>Jindal Worldwide Ltd.</li>
+            <li>Ashapura Intimates Fashion Ltd.</li>
+            <li>Mangalam Organics Ltd.</li>
+        </ul>
+    </div>
+</body>
+</html>

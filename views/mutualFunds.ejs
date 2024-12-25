@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mutual Funds</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #121316;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(90deg, #1f1c2c, #928dab);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .button-container button {
+            flex: 1 1 45%;
+            margin: 10px;
+            padding: 20px;
+            background: #444;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            font-size: 18px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+
+        .button-container button:hover {
+            background: #00ff00;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
+        }
+
+        @media (max-width: 768px) {
+            .button-container button {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mutual Funds</h1>
+    </header>
+    <div class="button-container">
+        <button onclick="window.location.href='/mbeginner'">Beginners Guide</button>
+        <button onclick="window.location.href='/sip'">SIP Calculator</button>
+        <button onclick="window.location.href='/lc'">Large Cap</button>
+        <button onclick="window.location.href='/lcmc'">Large & Mid Cap</button>
+        <button onclick="window.location.href='/mc'">Mid Cap</button>
+        <button onclick="window.location.href='/sc'">Small Cap</button>
+        <button onclick="window.location.href='/minvest'">Mutual funds investments</button>
+        <button onclick="window.location.href='/mdisclaimer'">Disclaimer</button>
+    </div>
+
+    <script>
+        function redirectTo(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

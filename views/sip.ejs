@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .calculator {
+            background: rgba(160, 188, 19, 0.491);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+        .calculator h2 {
+            text-align: center;
+            color: #333;
+        }
+        .input-group {
+            margin: 15px 0;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        .slider {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .output {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+        }
+        .output span {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .slider-output {
+            display: flex;
+            justify-content: space-between;
+        }
+        .slider-value {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="calculator">
+        <h2>SIP Calculator</h2>
+        
+        <div class="input-group">
+            <label for="investment">Monthly Investment (₹)</label>
+            <input type="number" id="investment" placeholder="Enter amount" value="25000">
+        </div>
+
+        <div class="input-group">
+            <label for="rate">Expected Return Rate (%)</label>
+            <input type="range" id="rate" min="1" max="20" value="12" class="slider">
+            <div class="slider-output">
+                <span>1%</span>
+                <span>20%</span>
+            </div>
+            <div class="slider-value" id="rate-value">12%</div>
+        </div>
+
+        <div class="input-group">
+            <label for="time">Time Period (Years)</label>
+            <input type="range" id="time" min="1" max="30" value="10" class="slider">
+            <div class="slider-output">
+                <span>1 Year</span>
+                <span>30 Years</span>
+            </div>
+            <div class="slider-value" id="time-value">10 Years</div>
+        </div>
+
+        <div class="output">
+            <p>Invested Amount: ₹<span id="invested-amount">3000000</span></p>
+            <p>Estimated Returns: ₹<span id="estimated-returns">2808477</span></p>
+        </div>
+
+        <button class="button" onclick="calculateSIP()">Calculate</button>
+    </div>
+</div>
+
+<script>
+   
+    document.getElementById("rate").addEventListener("input", function() {
+        let rateValue = document.getElementById("rate").value;
+        document.getElementById("rate-value").innerText = rateValue + "%";
+        calculateSIP();
+    });
+
+   
+    document.getElementById("time").addEventListener("input", function() {
+        let timeValue = document.getElementById("time").value;
+        document.getElementById("time-value").innerText = timeValue + " Years";
+        calculateSIP();
+    });
+
+    
+    document.getElementById("investment").addEventListener("input", calculateSIP);
+
+    function calculateSIP() {
+        let investment = document.getElementById("investment").value;
+        let rate = document.getElementById("rate").value;
+        let time = document.getElementById("time").value;
+
+        let totalAmount = 0;
+        let n = time * 12;  
+        let r = rate / 1200; 
+        
+        totalAmount = investment * ((Math.pow(1 + r, n) - 1) / r);
+
+        let investedAmount = investment * n;
+        let estimatedReturns = totalAmount - investedAmount;
+
+        document.getElementById("invested-amount").innerText = investedAmount.toFixed(2);
+        document.getElementById("estimated-returns").innerText = estimatedReturns.toFixed(2);
+    }
+
+ 
+    calculateSIP();
+</script>
+
+</body>
+</html>

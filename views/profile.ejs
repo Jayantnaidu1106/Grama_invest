@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        /* Add your styles here */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>User Profile</h1>
+    </header>
+    <div id="profile-container">
+        <!-- Profile details will be loaded here -->
+    </div>
+    <form id="profilePhotoForm">
+        <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*" required>
+        <button type="submit">Upload Photo</button>
+    </form>
+
+    <script>
+        async function fetchProfile() {
+            const response = await fetch('/profile', {
+                headers: {
+                    'Authorization': localStorage.getItem('token')
+                }
+            });
+            const data = await response.json();
+            if (response.ok) {
+                document.getElementById('profile-container').innerHTML = `
+                    <p>Name: ${data.result.name}</p>
+                    <p>Email: ${data.result.email}</p>
+                    <img src="${data.result.profilePhoto}" alt="Profile Photo" width="100">
+                `;
+            } else {
+                document.getElementById('profile-container').innerHTML = `<p>${data.message}</p>`;
+            }
+        }
+
+        document.getElementById('profilePhotoForm').onsubmit = function(event) {
+            event.preventDefault();
+            const formData = new FormData();
+            formData.append('profilePhoto', document.getElementById('profilePhoto').files[0]);
+
+            fetch('/upload-profile-photo', {
+                method: 'POST',
+                headers: {
+                    'Authorization': localStorage.getItem('token')
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    alert(data.message);
+                } else {
+                    alert('Profile photo uploaded successfully!');
+                    fetchProfile();
+                }
+            })
+            .catch(error => {
+                console.error('Error uploading profile photo:', error);
+            });
+        }
+
+        fetchProfile();
+    </script>
+</body>
+</html>
