@@ -8,7 +8,7 @@ const connectDB = require('./connect');
 const userRoutes = require("./routes/user");
 const multer = require('multer');
 const { verifyToken } = require('./middleware/auth'); // Add this line
-const User = require('./models/User'); // Add this line
+const User = require('./models/user'); // Add this line
 
 const fs = require('fs');
 const uploadDir = path.join(__dirname, 'uploads');
